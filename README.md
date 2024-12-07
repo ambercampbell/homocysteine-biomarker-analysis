@@ -23,9 +23,9 @@ title: My Table
 | `sex` (RIAGENDR)            | Sex (Male, Female)                                                  |
 | `age` (RIDAGEYR)            | Age (years)                                                         |
 | `race` (RIDRETH1)           | Race                                                                |
-| `education_level` (DMDEDUC2)| Highest Education Achieved                                          |
+| `education_level` (DMDEDUC2)| Highest Education Achieved (No/Some/All High School, Some/All College)      |
 | `bmi` (BMXBMI)              | BMI (kg/b^2^)                                                       |
-| `diet_level` (DBQ700)       | Diet Quality                                                        |
+| `diet_level` (DBQ700)       | Self-desribed Diet Quality (Poor, Fair, Good, Very Good, Excellent) |
 | `WkAlcDays`                 | Average number of alcoholic drinks per week                         |
 | `diabetes_status` (DIQ010)  | Diabetes Status (Borderline, Yes, No)                               |
 | `systolic_bp` (BPXSY1)      | Systolic Blood Pressure (mmHg)                                      |
@@ -35,14 +35,30 @@ title: My Table
 
 ## Data Cleaning and Exploratory Analysis
 ### Data Cleaning
- I started by renaming the columns (indicated in parentheses in the previous table) to be more easily-comprehendable. I then verified that each row in the dataset had a unique ID, and thus no duplicate information about each participant from the study. I then checked relevant columns `homocysteine`, `age`, `bmi`, `systolic_bp`, and `cholesterol` for values of 0, which are likely indicators of missing values, because they are all measurements that should have values above 0. None of these values had columns of 0, so I moved on to inspecting my categorial columns, making sure that the unique values in each column were comprehendable. The `diabetes_status` column had a range of values including 'Yes', 'No', 'Borderline', and 'Borderlinederline'. I corrected any instances of 'Borderlinederline' to match 'Borderline'.
+ 1. I started by renaming the columns (indicated in parentheses in the previous table) to be more easily-comprehendable. 
+ 2. I then verified that each row in the dataset had a unique ID, and thus no duplicate information about each participant from the study. I then checked relevant columns `homocysteine`, `age`, `bmi`, `systolic_bp`, and `cholesterol` for values of 0, which are likely indicators of missing values, because they are all measurements that should have values above 0. While none of these columns had values of 0, I noticed some extreme values for BMI (such as 130). While acknowledging that BMI is a controversial and more recently viewed as a misused or inaccurate measurement, it is highly unlikely for BMI values to be above 50, and I those chose to remove any rows from the dataset that contained BMI measurements over 54 after looking into this more ([CDC](https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi_tbl.pdf), [Cleveland Clinic](https://my.clevelandclinic.org/health/diseases/21989-class-iii-obesity-formerly-known-as-morbid-obesity)). 
+ 3. I then inspected the categorial columns, making sure that the unique values in each column were comprehendable. The `diabetes_status` column had a range of values including 'Yes', 'No', 'Borderline', and 'Borderlinederline'. I corrected any instances of 'Borderlinederline' to match 'Borderline'.
 
+My resulting dataframe contained 1099 rows. 
 The first few rows of this cleaned dataset are shown below. 
- ![cleaned dataframe](clean-df.png)
 
- 
+|    id |   homocysteine |   cotinine | sex    |   age | race          | education_level   |   bmi | diet_level   | diabetes_status   |   systolic_bp |   cholesterol |   WkAlcDays |
+|------:|---------------:|-----------:|:-------|------:|:--------------|:------------------|------:|:-------------|:------------------|--------------:|--------------:|------------:|
+| 31131 |           9.33 |      0.035 | Female |    44 | Black         | SomeCollege       | 30.9  | Good         | No                |           144 |           105 |           0 |
+| 31132 |           8.96 |      0.021 | Male   |    70 | White         | College           | 24.74 | VeryGood     | Yes               |           138 |           147 |           4 |
+| 31134 |           8.2  |      0.065 | Male   |    73 | White         | HighSchool        | 30.63 | Good         | No                |           130 |           186 |           2 |
+| 31144 |           7.97 |      0.125 | Male   |    21 | OtherHispanic | HighSchool        | 25.03 | Excellent    | No                |           116 |           207 |           0 |
+| 31149 |          10.29 |      0.011 | Female |    85 | White         | SomeHighSchool    | 21.63 | Good         | No                |           110 |           121 |         nan |
 
 ### Univariate Analysis
+I first examined by main measurements of interest, homocysteine. 
+<iframe
+  src="assets/homocysteine-dist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 ### Bivariate Analysis
 ### Interesting Aggregates
 ### Missing Value Imputation

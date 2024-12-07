@@ -138,7 +138,14 @@ I chose **MSE** as my evaluation metric because it tends to provides an easily u
 
 ## Baseline Model
 For my baseline model, I created a linear regression model that include 2 nominal features, `diabetes_status` and `race`. These features were one-hot-encoded.
-I chose these two variables because in my exploratory analyses and bivariate analyses, I noted that there were distinct differences between the average homocysteine level for participants of different racial groups as well as participants with different diabetes statuses. 
+
+ I added `diabetes_status` because [insulin resistence is associated with increased homocysteine levels](https://pmc.ncbi.nlm.nih.gov/articles/PMC3878883/#:~:text=In%20patients%20with%20diabetes%2C%20elevated,T2DM%20%5B5%2C6%5D.)
+
+I also incorporated `race` because differences in genetic background, dietary patterns, and access to healthcare across racial groups may influence homocysteine levels.
+
+I originally indentified these two features in my exploratory analyses and bivariate analyses, as I noted that there were distinct differences between the average homocysteine level for participants of different racial groups as well as participants with different diabetes statuses.
+
+
  ![pipeline of baseline model](img/base-model.png)
 
 ### Performance of Baseline Model:
@@ -150,12 +157,18 @@ and an **r-squared value of 0.07145**
 
 ## Final Model
 For my final model, I experimented with different features and models before landing on a ridge regression model with 8 features.
-There were 4 were numerical features: `age` , `bmi`, `systolic_bp`, `cholesterol`
-There were 3 were nominal features: `sex`, `diabetes_status`, `race`
-There was 1 ordinal feature: `diet_level`
+* There were 4 were numerical features: `age` , `bmi`, `systolic_bp`, `cholesterol`
+* There were 3 were nominal features: `sex`, `diabetes_status`, `race`
+* There was 1 ordinal feature: `diet_level`
 
 I added `age` because I hypothesized that the older a person is, the less likely their body is to properly metabolize and break down amino acids like homocysteine when needed, so it would make sense that older people would have higher homocysteine levels. 
-I added BMI 
+I added `bmi` because body weight could affect the way a person metabolizes nutrients and thus, vitamins like B12 and B6.
+I added `systolic_bp`and `cholesterol` because they are both associated with cardiovascular health issues, so including them in this model could correlate with higher homocysteine values
+I added `cholesterol`
+I added `sex` because there are physiological differences between males and females that could impact the rate of homocysteine breakdown.
+
+I added `diet_level` because the quality of one's diet could impact the nutrients and vitamins they are getting, and could impact the amount of folate, Vitamin B6, and Vitamin B12, affecting the subsequent amount of homocysteine in the body. (I.e. if you have a high amount of folate, your body will need to break down more homocysteine, so you will have lower homocysteine levels)
+
 
  ![pipeline of final model](img/final-model.png)
 

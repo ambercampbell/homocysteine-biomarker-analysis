@@ -63,7 +63,7 @@ Describe Distribution
 
 ### Bivariate Analysis
 <iframe
-  src="assets/homocysteine-by-race.html"
+  src="assets/homocysteine-race.html"
   width="800"
   height="600"
   frameborder="0"
@@ -71,7 +71,68 @@ Describe Distribution
 
 
 ### Interesting Aggregates
+Pivot table using diet quality
+|     bmi |   cholesterol |   cotinine |   homocysteine |   systolic_bp |
+|--------:|--------------:|-----------:|---------------:|--------------:|
+| 32.117  |       198.898 |   0.331143 |        7.4955  |       120.372 |
+| 30.6597 |       197.861 |   0.191467 |        7.6591  |       123.637 |
+| 28.8371 |       202.039 |   0.128332 |        7.83144 |       123.385 |
+| 27.6363 |       199.931 |   0.153509 |        7.94585 |       125.005 |
+| 27.321  |       205.181 |   0.14494  |        7.79451 |       123.288 |
+
+
 ### Missing Value Imputation
+
+Imputed Using mean for numerical columns and most common value for categorical columns.
+There were 21 missing BMI measurements
+<iframe
+  src="assets/bmi-imputation.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+There were 220 missing systolic blood pressure measurements
+<iframe
+  src="assets/bp-imputation.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+There were 13 missing total cholesterol measurements
+<iframe
+  src="assets/cholesterol-imputation.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+There were 11 missing cotinine measurements
+<iframe
+  src="assets/cholesterol-imputation.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+There were 2 missing diabetes status values
+<iframe
+  src="assets/diabetes-imputation.html"
+  width="800"
+  height="600"
+  frameborder="0"
+
+  There were 4 missing diet quality values
+<iframe
+  src="assets/diet-imputation.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+></iframe>
+
+
 
 ## Framing a Prediction Problem
 ### Problem Identification

@@ -47,7 +47,6 @@ The first few rows of this cleaned dataset are shown below.
 | 31149 |          10.29 |      0.011 | Female |    85 | White         | SomeHighSchool    | 21.63 | Good         | No                |           110 |           121 |         nan |
 
 ### Univariate Analysis
-I first examined by main measurements of interest, homocysteine. 
 <iframe
   src="assets/homocysteine-dist.html"
   width="800"
@@ -55,7 +54,7 @@ I first examined by main measurements of interest, homocysteine.
   frameborder="0"
 ></iframe>
 
-Describe Distribution
+This plot shows the distribution of homocysteine across participants in the NHANES dataset. The distribution appears to be relatively normal with a slight right skew. This suggests that the data is well-behaved and that the average homocysteine level measurement ins around 6.5 ug/mol. 
 
 ### Bivariate Analysis
 <iframe
@@ -64,6 +63,9 @@ Describe Distribution
   height="600"
   frameborder="0"
 ></iframe>
+
+This plot shows the distribution of homocysteine by racial group. This plot suggests that there is a difference in distribution between diffrent racial groups, with Black and white participant distribution appear to have higher medians than other groups.
+
 
 
 ### Interesting Aggregates
@@ -139,7 +141,7 @@ I chose **MSE** as my evaluation metric because it tends to provides an easily u
 ## Baseline Model
 For my baseline model, I created a linear regression model that include 2 nominal features, `diabetes_status` and `race`. These features were one-hot-encoded.
 
- I added `diabetes_status` because [insulin resistence is associated with increased homocysteine levels](https://pmc.ncbi.nlm.nih.gov/articles/PMC3878883/#:~:text=In%20patients%20with%20diabetes%2C%20elevated,T2DM%20%5B5%2C6%5D.)
+ I added `diabetes_status` because insulin resistence is associated with [increased homocysteine levels](https://pmc.ncbi.nlm.nih.gov/articles/PMC3878883/#:~:text=In%20patients%20with%20diabetes%2C%20elevated,T2DM%20%5B5%2C6%5D.).
 
 I also incorporated `race` because differences in genetic background, dietary patterns, and access to healthcare across racial groups may influence homocysteine levels.
 
@@ -166,7 +168,6 @@ I added `bmi` because body weight could affect the way a person metabolizes nutr
 I added `systolic_bp`and `cholesterol` because they are both associated with cardiovascular health issues, so including them in this model could correlate with higher homocysteine values
 I added `cholesterol`
 I added `sex` because there are physiological differences between males and females that could impact the rate of homocysteine breakdown.
-
 I added `diet_level` because the quality of one's diet could impact the nutrients and vitamins they are getting, and could impact the amount of folate, Vitamin B6, and Vitamin B12, affecting the subsequent amount of homocysteine in the body. (I.e. if you have a high amount of folate, your body will need to break down more homocysteine, so you will have lower homocysteine levels)
 
 

@@ -133,5 +133,20 @@ There were 2 missing diabetes status values
 
 ## Framing a Prediction Problem
 From the univariate and bivariate analyses, I noticed that homocysteine levels tended to vary for participants of different races and diabetes statuses. Thus, my prediction problem will be ==predicting a person's homocysteine levels using such demographic and health information==. This is a ==regression problem==, with ==homocysteine as the prediction variable==. I chose ==MSE== as my evaluation metric because it tends to provides an easily understandable ,measure of how similar the prediction levels are to the actual homocysteine levels, and it penalizes larger errors more heavily than smaller errors. All of the information presented in the dataset would be known at time of prediction, because they are all health measurements or demographic identifications that are independent of one another. 
+
 ## Baseline Model
+For my baseline model, I created a linear regression model that include 2 nominal features, `diabetes_status` and `race`. These features were one hot encoded through sklearn pipeline. 
+ ![pipeline of baseline model](base-model.png)
+
+### Performance of Baseline Model:
+The baseline model achieved an MSE of 10.
+and an r^2^ value of 0.000
+With sucha  low r^2 value and MSE of 10, I do not believe this model to be "good", given that the mean homocysteine 
+Describe your model and state the features in your model, including how many are quantitative, ordinal, and nominal, and how you performed any necessary encodings. Report the performance of your model and whether or not you believe your current model is “good” and why.
+
+
 ## Final Model
+For my final model, I experimented with different features and models before landing on a ridge regression model with 8 features.
+There were 4 were numerical features: `age` , `bmi`, `systolic_bp`, `cholesterol`
+There were 3 were nominal features: `sex`, `diabetes_status`, `race`
+There was 1 ordinal feature: `diet_level`

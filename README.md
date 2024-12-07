@@ -59,7 +59,17 @@ I first examined by main measurements of interest, homocysteine.
   frameborder="0"
 ></iframe>
 
+Describe Distribution
+
 ### Bivariate Analysis
+<iframe
+  src="assets/homocysteine-by-race.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
 ### Interesting Aggregates
 ### Missing Value Imputation
 

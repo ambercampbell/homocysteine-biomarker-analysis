@@ -67,7 +67,9 @@ Describe Distribution
 
 
 ### Interesting Aggregates
+
 Pivot table using diet quality
+
 |     bmi |   cholesterol |   cotinine |   homocysteine |   systolic_bp |
 |--------:|--------------:|-----------:|---------------:|--------------:|
 | 32.117  |       198.898 |   0.331143 |        7.4955  |       120.372 |
@@ -80,6 +82,7 @@ Pivot table using diet quality
 ### Missing Value Imputation
 
 Imputed Using mean for numerical columns and most common value for categorical columns.
+
 There were 21 missing BMI measurements
 <iframe
   src="assets/bmi-imputation.html"
@@ -118,6 +121,7 @@ There were 2 missing diabetes status values
   width="800"
   height="600"
   frameborder="0"
+></iframe>
 
   There were 4 missing diet quality values
 <iframe
@@ -125,7 +129,6 @@ There were 2 missing diabetes status values
   width="800"
   height="600"
   frameborder="0"
-></iframe>
 ></iframe>
 
 

@@ -2,7 +2,7 @@
 By Amber Campbell
 ## Introduction
 ### General Introduction
-Cardiovascular disease has been the leading cause of death for both men and women in the United States since 1950. There are many known risk factors for cardiovascular disease including high blood pressure, high cholesterol, and smoking. Homocysteine, a naturally-occuring amino acid in the body, is often used as a biomarker for cardiovascular disease. While homocysteine is broken down by folate, Vitamin B12, and Vitamin B6 to generate chemicals the body needs, high levels of homocysteine can damange artery linings in the body and blood clots, significantly increasing the risk of cardiovascular disease. Research has long supported the notion of homocysteine as a biomarker for cardiovascular disease, and recent advocates support the use of its monitoring and measurement as a guide for disease prevention. 
+Cardiovascular disease has been the leading cause of death for both men and women in the United States since 1950. There are many known risk factors for cardiovascular disease including high blood pressure, high cholesterol, and smoking. Homocysteine, a naturally-occuring amino acid in the body, is often used as a biomarker for cardiovascular disease. While homocysteine is broken down by folate, Vitamin B12, and Vitamin B6 to generate chemicals the body needs, high levels of homocysteine can damange artery linings in the body and blood clots, significantly increasing the risk of cardiovascular disease. Research has long supported the notion of homocysteine as a biomarker for cardiovascular disease, and recent advocates support the use of its monitoring and measurement as a guide for disease prevention(). 
 
 The dataset I am using comes from the National Health and Nutrition Examination Survey (NHANES) 2005-2006 cohort study, in which demographic,socioeconomic, dietary, and health-related questions are collected from a nationally representative sample. Because smoking is such a well-identified risk factor for cardiovascular disease, the qustion I am intending to focus on is how demographic and health factors relate to a person's homocysteine levels, including diet quality, BMI, sex, race, blood pressure, and total cholesterol. Using such information, I created several prediction models to to predict a person's homocysteine level vased on these metrics. Such a prediction model can be used as an investigative tool for the risks of cardiovascular disease, with homocysteine serving as a proxy measure of an individual's risk for cardiovascular disease. 
 
@@ -68,15 +68,13 @@ Describe Distribution
 
 ### Interesting Aggregates
 
-Pivot table using diet quality
+Pivot table using diabetes status
 
-|     bmi |   cholesterol |   cotinine |   homocysteine |   systolic_bp |
-|--------:|--------------:|-----------:|---------------:|--------------:|
-| 32.117  |       198.898 |   0.331143 |        7.4955  |       120.372 |
-| 30.6597 |       197.861 |   0.191467 |        7.6591  |       123.637 |
-| 28.8371 |       202.039 |   0.128332 |        7.83144 |       123.385 |
-| 27.6363 |       199.931 |   0.153509 |        7.94585 |       125.005 |
-| 27.321  |       205.181 |   0.14494  |        7.79451 |       123.288 |
+| diabetes_status   |     bmi |   cholesterol |   cotinine |   homocysteine |   systolic_bp |
+|:------------------|--------:|--------------:|-----------:|---------------:|--------------:|
+| Borderline        | 33.4398 |       200.412 |   0.262382 |        8.30324 |       133.549 |
+| No                | 28.6295 |       201.569 |   0.162658 |        7.64186 |       122.485 |
+| Yes               | 31.8165 |       192.099 |   0.120988 |        9.17927 |       132.996 |
 
 
 ### Missing Value Imputation
@@ -134,7 +132,6 @@ There were 2 missing diabetes status values
 
 
 ## Framing a Prediction Problem
-### Problem Identification
-
+From the univariate and bivariate analyses, I noticed that homocysteine levels tended to vary for participants of different races and diabetes statuses. Thus, my prediction problem will be ==predicting a person's homocysteine levels using such demographic and health information==. This is a ==regression problem==, with ==homocysteine as the prediction variable==. I chose ==MSE== as my evaluation metric because it tends to provides an easily understandable ,measure of how similar the prediction levels are to the actual homocysteine levels, and it penalizes larger errors more heavily than smaller errors. All of the information presented in the dataset would be known at time of prediction, because they are all health measurements or demographic identifications that are independent of one another. 
 ## Baseline Model
 ## Final Model

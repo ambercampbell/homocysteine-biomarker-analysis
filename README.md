@@ -10,10 +10,6 @@ The dataset I am using comes from the National Health and Nutrition Examination 
 ### Introduction of Columns
  This dataset was prefiltered in attempts to only include non-smokers by excluding any persons who had smoked over 100 cigarettes in their lifetime or had smoked within 5 days of taking the survey. There are 2033 rows in this dataset, representing health and demographic information for 2033 participants of the NHANES survey. The dataset contains the following relevant columns: 
 
----
-layout: default
-title: My Table
----
 
 | Column                      | Description                                                         |
 |-----------------------------|---------------------------------------------------------------------|

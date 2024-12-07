@@ -38,6 +38,10 @@ title: My Table
  I started by renaming the columns (indicated in parentheses in the previous table) to be more easily-comprehendable. I then verified that each row in the dataset had a unique ID, and thus no duplicate information about each participant from the study. I then checked relevant columns `homocysteine`, `age`, `bmi`, `systolic_bp`, and `cholesterol` for values of 0, which are likely indicators of missing values, because they are all measurements that should have values above 0. None of these values had columns of 0, so I moved on to inspecting my categorial columns, making sure that the unique values in each column were comprehendable. The `diabetes_status` column had a range of values including 'Yes', 'No', 'Borderline', and 'Borderlinederline'. I corrected any instances of 'Borderlinederline' to match 'Borderline'.
 
 The first few rows of this cleaned dataset are shown below. 
+ ![cleaned dataframe](clean-df.png)
+
+ 
+
 ### Univariate Analysis
 ### Bivariate Analysis
 ### Interesting Aggregates

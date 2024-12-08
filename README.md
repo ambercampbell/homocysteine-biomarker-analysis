@@ -163,14 +163,14 @@ For my final model, I experimented with different features and models before lan
 * There were 3 were nominal features: `sex`, `diabetes_status`, `race`
 * There was 1 ordinal feature: `diet_level`
 
-I added `age` because I hypothesized that the older a person is, the less likely their body is to properly metabolize and break down amino acids like homocysteine when needed, so it would make sense that older people would have higher homocysteine levels. 
-I added `bmi` because body weight could affect the way a person metabolizes nutrients and thus, vitamins like B12 and B6.
-I added `systolic_bp`and `cholesterol` because they are both associated with cardiovascular health issues, so including them in this model could correlate with higher homocysteine values
-I added `cholesterol`
-I added `sex` because there are physiological differences between males and females that could impact the rate of homocysteine breakdown.
-I added `diet_level` because the quality of one's diet could impact the nutrients and vitamins they are getting, and could impact the amount of folate, Vitamin B6, and Vitamin B12, affecting the subsequent amount of homocysteine in the body. (I.e. if you have a high amount of folate, your body will need to break down more homocysteine, so you will have lower homocysteine levels)
-
 I one-hot-encoded the categorical variables, and chose to use StandardScaler and apply polynomialFeatures in order attepts to capture any non-linear relationships there might be between homocysteine and the numerical features, while also noting that ridge regression is sensitive to scale, and applying polynomial transformations before scaling could have amplified differences in scale.
+
+* I added `age` because I hypothesized that the older a person is, the less likely their body is to properly metabolize and break down amino acids like homocysteine when needed, so it would make sense that older people would have higher homocysteine levels. 
+* I added `bmi` because body weight could affect the way a person metabolizes nutrients and thus, vitamins like B12 and B6.
+* I added `systolic_bp`and `cholesterol` because they are both associated with cardiovascular health issues, so including them in this model could correlate with higher homocysteine values
+* I added `sex` because there are physiological differences between males and females that could impact the rate of homocysteine breakdown.
+* I added `diet_level` because the quality of one's diet could impact the nutrients and vitamins they are getting, and could impact the amount of folate, Vitamin B6, and Vitamin B12, affecting the subsequent amount of homocysteine in the body. (I.e. if you have a high amount of folate, your body will need to break down more homocysteine, so you will have lower homocysteine levels)
+
 
  ![pipeline of final model](img/final-model.png)
 

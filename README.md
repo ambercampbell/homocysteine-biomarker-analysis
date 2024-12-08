@@ -64,7 +64,7 @@ This plot shows the distribution of homocysteine across participants in the NHAN
   frameborder="0"
 ></iframe>
 
-This plot shows the distribution of homocysteine by racial group. This plot suggests that there is a difference in distribution between diffrent racial groups, with Black and white participant distribution appear to have higher medians than other groups.
+This plot shows the distribution of homocysteine by racial group. This plot suggests that there is a difference in distribution between diffrent racial groups, with Black and white racial group distributions appearing to have higher median homocysteine measurement than other groups.
 
 
 
@@ -170,6 +170,7 @@ I added `cholesterol`
 I added `sex` because there are physiological differences between males and females that could impact the rate of homocysteine breakdown.
 I added `diet_level` because the quality of one's diet could impact the nutrients and vitamins they are getting, and could impact the amount of folate, Vitamin B6, and Vitamin B12, affecting the subsequent amount of homocysteine in the body. (I.e. if you have a high amount of folate, your body will need to break down more homocysteine, so you will have lower homocysteine levels)
 
+I one-hot-encoded the categorical variables, and chose to use StandardScaler and apply polynomialFeatures in order attepts to capture any non-linear relationships there might be between homocysteine and the numerical features, while also noting that ridge regression is sensitive to scale, and applying polynomial transformations before scaling could have amplified differences in scale.
 
  ![pipeline of final model](img/final-model.png)
 
